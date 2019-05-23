@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+
+  <tbody>
+    <% @hakkindas.each do |hakkinda| %>
+      <section class="blog-post-area section-margin">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-1"> </div>
+          <div class="col-md-11">
+              <div class="main_blog_details">
+              <%= image_tag hakkinda.resim.url(:medium) if hakkinda.resim? %> 
+                 <h4>  Hakkımda </h4>
+                  <div class="user_details">
+                     <div class="float-right mt-sm-0 mt-3">
+                      <div class="media">
+                        <div class="media-body">
+                          
+                          <p> <%= hakkinda.tarih %>am</p>
+                         
+                        </div>
+                        <div class="d-flex">
+                          <img width="42" height="42" src="https://via.placeholder.com/25x25" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><%= simple_format hakkinda.aciklama  %></p>
+               
+            
+                </div>
+               
+                <%= link_to 'Back', hakkindas_path,class:"btn btn-primary" %>
+      
+                </div>
+      </section>
+      
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

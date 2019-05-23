@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Ramazan Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to 'Anasayfa', yazilars_path,class:"nav-link" %>
+  
+        </li>
+      <li class="nav-item">
+      <%= link_to 'Hakkında', hakkindas_path,class:"nav-link" %>
+       
+      </li>
+      <li class="nav-item">
+      <%= link_to 'İletişim', iletisims_path,class:"nav-link" %>
+      
+       
+      </li>
+     
+    </ul>
+    <span class="navbar-text" style="padding-left:250px">
+    <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> | <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+    <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> | <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+    <% end %> 
+    
+    </span>
+    
+  </div>
+</nav
+<div class="container">
+  <div class="row" style="background-color:black;height:250px;padding-left:20px">
+      <div class="col-sm-12 col-md-6" >
+          <div style="display: flex; color:white; align-items: center; min-height: 100%;">
+              <div> 
+                <h1 style="color:white">Blog </h1><br/>
+                <p>Kişisel ve hobi amaçlı tutulan blog</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+    
+ 
+    <%= yield %>
+
+
+  </body>
+</html>

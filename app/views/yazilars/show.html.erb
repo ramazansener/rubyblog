@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<section class="blog-post-area section-margin">
+<div class="container">
+  <div class="row">
+  <div class="col-md-1"> </div>
+    <div class="col-md-11">
+        <div class="main_blog_details">
+        <%= image_tag @yazilar.resim.url(:medium) if @yazilar.resim? %> 
+           <h4>  <%= @yazilar.baslik %> </h4>
+            <div class="user_details">
+               <div class="float-right mt-sm-0 mt-3">
+                <div class="media">
+                  <div class="media-body">
+                    <h5>    <%= @yazilar.kategori %> wiens</h5>
+                    <p> <%= @yazilar.tarih %> am</p>
+                    <%= @yazilar.yazar %>
+                  </div>
+                  <div class="d-flex">
+                    <img width="42" height="42" src="https://via.placeholder.com/25x25" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p> <%= @yazilar.aciklama %></p>
+      
+          </div>
+         
+          <%= link_to 'Back', yazilars_path,class:"btn btn-primary" %>
+
+          </div>
+</section>

@@ -1,0 +1,30 @@
+<%= form_with(model: hakkinda, local: true) do |form| %>
+  <% if hakkinda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hakkinda.errors.count, "error") %> prohibited this hakkinda from being saved:</h2>
+
+      <ul>
+      <% hakkinda.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :aciklama %>
+    <%= form.text_area :aciklama %>
+  </div>
+  <div class="field">
+    <%= form.label :Resim, class:"form-control is-valid "%>
+    <%= form.file_field :resim %>
+  </div>
+  <div class="field">
+    <%= form.label :tarih %>
+    <%= form.date_select :tarih %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

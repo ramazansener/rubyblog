@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aciklama: MyText
+  tarih: 2019-05-17
+
+two:
+  aciklama: MyText
+  tarih: 2019-05-17

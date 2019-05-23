@@ -1,0 +1,2 @@
+class Iletisim < ApplicationRecord
+end

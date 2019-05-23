@@ -1,0 +1,61 @@
+<%= form_with(model: yazilar, local: true) do |form| %>
+  <% if yazilar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(yazilar.errors.count, "error") %> prohibited this yazilar from being saved:</h2>
+
+      <ul>
+      <% yazilar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+   
+
+ 
+  
+    <div class="field">
+    <%= form.label :kategori %>
+    <%= form.text_field :kategori ,class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baslik %>
+    <%= form.text_field :baslik,class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :yazar %>
+    <%= form.text_field :yazar ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :aciklama %>
+    <%= form.text_area :aciklama ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :tarih %>
+    <%= form.date_select :tarih,class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= form.label :Resim %>
+    <%= form.file_field :resim% ,class:"form-control">
+  </div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
+    </div>
+  </div>
+</div>

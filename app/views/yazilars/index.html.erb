@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+
+
+   <% @yazilars.each do |yazilar| %>
+  <br/>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-1">
+    </div>
+      <div class="col-md-3">
+      <br/><br/>
+      <%= image_tag yazilar.resim.url(:thumb) if yazilar.resim? %>
+      
+      </div>
+      <div class="col-md-7">
+      <div class="single-recent-blog-post">
+            <div class="thumb">
+              <ul class="thumb-info" >
+               <li><%= yazilar.yazar %></li>
+                <li> <%= yazilar.tarih %></li>
+                <li>2 Like</li>
+              </ul>
+            </div>
+            <div class="details mt-20">
+              <h3><%= yazilar.baslik %></h3>
+              <p><%= yazilar.aciklama.first(250)%> </p>
+            </div>
+            <%= link_to 'Göster', yazilar,{:class=>"btn btn-primary"} %>    
+              
+<hr/>
+        </div>
+      </div>
+      <div class="col-md-1">
+      </div>
+	
+      <% end %>
+     
+    </div>
+  </div>
+
+</tbody>
+
+
+<br>
+
+

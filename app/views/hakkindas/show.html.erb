@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aciklama:</strong>
+  <%= @hakkinda.aciklama %>
+</p>
+
+<p>
+  <strong>Tarih:</strong>
+  <%= @hakkinda.tarih %>
+</p>
+
+<%= link_to 'Edit', edit_hakkinda_path(@hakkinda) %> |
+<%= link_to 'Back', hakkindas_path %>
